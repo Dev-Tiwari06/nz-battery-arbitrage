@@ -11,14 +11,14 @@ import pandas as pd
 # Settings
 # EMI folder holding one CSV per month (every node, every trading period)
 BASE = "https://www.emi.ea.govt.nz/Wholesale/Datasets/DispatchAndPricing/FinalEnergyPrices/ByMonth"
-OUT = "data/raw/prices_mt_roskill.csv"   # where the filtered data gets saved   # where the filtered data gets saved
+OUT = "data/raw/prices_mt_roskill.csv"   # where the filtered data gets saved
 
 # Every month we want, as pandas "periods" (Jan 2023, Feb 2023, ..., Jun 2026)
 MONTHS = pd.period_range("2023-01", "2026-06", freq="M")
 
 
 def load_month(month):
-    """Download one month's file and return only the Otahuhu and Mt Roskill rows."""
+    """Download one month's file and return only the Mt Roskill rows."""
     # EMI's filenames need YYYYMM, e.g. 202301_FinalEnergyPrices.csv
     url = f"{BASE}/{month.strftime('%Y%m')}_FinalEnergyPrices.csv"
     try:

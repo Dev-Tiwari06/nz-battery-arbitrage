@@ -1,0 +1,5 @@
+,MAE,RMSE,Spearman
+Model 0 Naive (yesterday),56.9,124.33,0.38
+Model 1 Weekly naive (last week),89.18,160.11,0.32
+Model 2a Linear (least squares),49.93,95.65,0.52
+Model 2b Linear (absolute error),48.44,95.79,0.52

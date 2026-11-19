@@ -62,6 +62,18 @@ weather = data.set_index(["date", "tp"])[["akl_temp", "mnw_wind"]]
 features = features.join(weather)
 features = features.join(data.reset_index().set_index(["date", "tp"])["time_nz"])
 
+# Day-ahead weather FORECASTS (only available from Jan 2024 onwards).
+# Same steps as the actual weather in build_dataset.py: read via UTC, then hourly -> half-hourly.
+# limit=1 fills only the single half-hour between two forecast hours, so the archive's
+# gaps (Jan to Feb 2024) stay empty instead of being bridged with a straight line
+forecast = pd.read_csv("data/raw/weather_forecast_hourly.csv")
+forecast.index = pd.DatetimeIndex(pd.to_datetime(forecast.pop("time_nz"), utc=True)).tz_convert("Pacific/Auckland")
+forecast_hh = (forecast.reindex(forecast.index.union(data.index))
+                       .interpolate(method="time", limit=1)
+                       .reindex(data.index))
+forecast_hh.index = pd.MultiIndex.from_arrays([data["date"], data["tp"]])   # label by (date, tp)
+features = features.join(forecast_hh)
+
 # 5. TIDY AND SAVE 
 # Drop rows with no target (the 8 empty days). Rows with missing FEATURES are kept:
 # the modelling notebook will decide which rows to use.

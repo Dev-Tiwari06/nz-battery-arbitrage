@@ -1,0 +1,12 @@
+,MAE,RMSE,Spearman
+Model 0 Naive (yesterday),56.9,124.33,0.38
+Model 1 Weekly naive (last week),89.18,160.11,0.32
+Model 2a Linear (least squares),49.93,95.65,0.52
+Model 2b Linear (absolute error),48.44,95.79,0.52
+LightGBM small,57.02,116.67,0.48
+LightGBM medium,56.67,114.31,0.48
+LightGBM large,55.8,110.55,0.48
+"LightGBM large, relative to 7-day average",58.14,116.28,0.44
+"LightGBM large, relative to yesterday",58.13,123.75,0.47
+LightGBM final (with weather),54.66,109.42,0.47
+LightGBM final (no weather),58.12,115.89,0.47

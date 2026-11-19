@@ -1,0 +1,8 @@
+,Total profit ($m),Capture rate (%)
+Perfect foresight,8.94,100.0
+Model 2a Linear (least squares),2.81,31.39
+Model 2b Linear (absolute error),2.8,31.27
+Model 3 LightGBM,2.68,29.93
+Typical day (no forecast),2.63,29.46
+Model 1 Weekly naive (last week),0.73,8.17
+Model 0 Naive (yesterday),0.7,7.87

@@ -10,3 +10,4 @@ LightGBM large,55.8,110.55,0.48
 "LightGBM large, relative to yesterday",58.13,123.75,0.47
 LightGBM final (with weather),54.66,109.42,0.47
 LightGBM final (no weather),58.12,115.89,0.47
+LightGBM final (forecast weather),54.46,109.7,0.46

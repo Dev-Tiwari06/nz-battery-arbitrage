@@ -51,3 +51,11 @@ def walk_forward(df, fit_predict, start, end):
         return result
     # map() runs one_month for each month; concat() joins the predictions
     return pd.concat(map(one_month, pd.period_range(start, end, freq="M")))
+
+def with_forecast_weather(fit_predict):
+    """Wrap any fit_predict so it TRAINS on actual weather but PREDICTS using the
+    day-ahead weather forecasts, as it would have to in real use."""
+    def wrapped(train, test):
+        test_with_forecasts = test.assign(akl_temp=test["akl_temp_fc"], mnw_wind=test["mnw_wind_fc"])
+        return fit_predict(train, test_with_forecasts)
+    return wrapped    

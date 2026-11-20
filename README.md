@@ -89,7 +89,7 @@ Each strategy plans the day with its forecast, then is paid at the **actual** pr
 
 ## Limitations
 - **Price-taker assumption:** the battery's own trading is assumed not to move prices. Real batteries of this size can affect local prices.
-- **Hypothetical battery and location:** no battery exists at Mt Roskill. Mt Roskill prices differ from Otahuhu's by \$0.35/MWh on average, so results are broadly representative of Auckland.
+- **Hypothetical battery and location:** no battery exists at Mt Roskill. The two Mt Roskill nodes (110 kV and 22 kV) differ by only \$0.35/MWh on average, but other Auckland nodes were not compared, so results may differ elsewhere.
 - **Energy arbitrage only:** real batteries also earn from reserves and other services, which are not modelled.
 - **Each day is optimised independently**, starting and ending at 100 MWh, so the battery cannot carry charge overnight into a high-price day.
 

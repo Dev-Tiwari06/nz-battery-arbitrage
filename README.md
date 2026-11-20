@@ -81,7 +81,7 @@ Each strategy plans the day with its forecast, then is paid at the **actual** pr
 
 ### Key findings
 1. **Ranking beats accuracy for battery scheduling.** The model with the lowest MAE earned the least of the trained models. The linear models, which ranked each day's prices best, earned the most.
-2. **About 70% of perfect-foresight profit is out of reach** for any day-ahead forecast. It comes from unpredictable spikes, such as \$2,500/MWh on 21/07/2025.
+2. **About 70% of perfect-foresight profit (\$6.13m) is out of reach for the best forecast**, and the shortfall is spread across the year rather than concentrated in a few spikes. Half of it comes from 75 different days, and the 10 worst days account for only 13%. On the biggest spike day (21/07/2025, \$2,470/MWh) the linear forecast actually captured 90%.
 3. **Tree models fail in unprecedented conditions.** On the validation year LightGBM lost to the linear models, and about 85 to 90% of the gap came from the August 2024 price crisis, when prices exceeded anything in its training data. On the calmer test year it had the lowest error.
 4. **Naive forecasts lose money on 43% of days.** When yesterday's prices were flat, the naive plan's timing was arbitrary. On 23/10/2025 it charged straight into an \$850/MWh spike, losing \$54k while perfect foresight earned \$104k.
 5. **Forecasting is worth more when cycling is costly or lossy.** At 80% round-trip efficiency, the typical-day schedule's capture fell to 16.9% while the linear model held 25.3%.

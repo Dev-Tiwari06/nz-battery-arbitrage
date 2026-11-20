@@ -1,5 +1,5 @@
 """
-Download half-hourly final energy prices for selected Auckland grid nodes
+Download half-hourly final energy prices for the Mt Roskill grid nodes
 from the Electricity Authority's EMI website, and save them as a single CSV.
 
 Node kept: every Mt Roskill node (codes starting "ROS", e.g. the 110 kV and 22 kV supply points)

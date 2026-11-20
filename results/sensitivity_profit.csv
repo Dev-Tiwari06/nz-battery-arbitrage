@@ -1,0 +1,11 @@
+,,Perfect foresight,Model 2a Linear (least squares),Typical day (no forecast)
+Duration,1 hour (100 MWh),6.0,1.68,1.73
+Duration,2 hours (200 MWh),8.94,2.81,2.63
+Duration,4 hours (400 MWh),12.07,4.0,3.66
+Efficiency,80% round trip,7.8,1.98,1.32
+Efficiency,88% round trip,8.94,2.81,2.63
+Efficiency,95% round trip,10.01,3.65,3.45
+Degradation cost,$0/MWh,9.79,3.6,3.33
+Degradation cost,$5/MWh,8.94,2.81,2.63
+Degradation cost,$10/MWh,8.24,2.28,1.8
+Degradation cost,$20/MWh,7.09,1.4,0.88
